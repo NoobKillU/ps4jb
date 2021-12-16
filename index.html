@@ -41,11 +41,11 @@ border-radius: 8px;
 .btn:hover {
 background-color: #0058b1;
 }
-.btn-toolbox {
-background-color: #ae2301;
+.btn-web {
+background-color: #076300;
 }
-.btn-toolbox:hover {
-background-color: #d42a01;
+.btn-web:hover {
+background-color: #18891b;
 }
 </style>
 <script src="int64.js"></script>
@@ -85,7 +85,10 @@ function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cac
 <button class="btn" onclick=load_rifRen()> RIF Renamer </button>
 <button class="btn" onclick=load_permUart()> Permanent UART </button>
 <br>
-<button class="btn" onclick=load_fanthreshold() style="margin-left: 75px;"> Fan Threshold </button><font color="white"><select id="tempC"></select>&#176;C
+<button class="btn" onclick=load_webrte() style="margin-left: 75px;"> WebRTE </button>
+<a href="http://ps4trainer.com/Trainer/index.html"><button class="btn btn-web" onclick=load_ps4trainer()> PS4 Trainer Web </button></a>
+<button class="btn" onclick=load_ps4debug()> PS4 Debug </button>
+<button class="btn" onclick=load_fanthreshold()> Fan Threshold </button><select id="tempC"></select>&#176;C
 <br>
 <hr style="margin-top: 86px;">
 <h1 style="margin-top: 15px; color: yellow;">Special Thanks to:<a href="https://twitter.com/sleirsgoevy" style="color:#f31414; margin-left: 15px;">@sleirsgoevy</a><a style="color:white; margin-left: 15px;">ChendoChap</a><a href="https://twitter.com/SpecterDev" style="color:#f31414; margin-left: 15px;">@SpecterDev</a><a style="color:white; margin-left: 15px;">SiSTR0</a><a href="https://twitter.com/Znullptr" style="color:#f31414; margin-left: 15px;">@Znullptr</a><a style="color:white; margin-left: 15px;">And Many More Developers ...</a></h1>
@@ -221,6 +224,20 @@ function load_permUart(){
 var script = document.createElement('script');script.src = "permanent-uart.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + Permanent UART... Please Wait !!!"
 LoadedMSG="Permanent UART Loaded... Press OK Now !!!";
+setTimeout(poc,1500);
+}
+
+function load_webrte(){
+var script = document.createElement('script');script.src = "webrte900.js";document.getElementsByTagName('head')[0].appendChild(script);
+msgs.innerHTML="Loading Jailbreak + WebRTE... Please Wait !!!"
+LoadedMSG="WebRTE... Press OK Now !!!";
+setTimeout(poc,1500);
+}
+
+function load_ps4debug(){
+var script = document.createElement('script');script.src = "ps4debug.js";document.getElementsByTagName('head')[0].appendChild(script);
+msgs.innerHTML="Loading Jailbreak + PS4 Debug... Please Wait !!!"
+LoadedMSG="PS4 Debug... Press OK Now !!!";
 setTimeout(poc,1500);
 }
 

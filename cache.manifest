@@ -20,8 +20,10 @@ kernel-dumper.js
 kexploit.js
 module-dumper.js
 permanent-uart.js
+ps4debug.js
 restore.js
 rif-renamer.js
 rop.js
 todex.js
 webkit.js
+webrte900.js
