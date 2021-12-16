@@ -55,8 +55,8 @@ background-color: #d42a01;
 </head>
 <body>
 <script>
-function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
-function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully ✔";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser ...";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Instalando Cache: " + Percent + "%";}
+function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Instalado con Exito ✔";},1000);setTimeout(function(){window.msgs.innerHTML="Ahora Reinicie el Navegador ...";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
 </script>
 <h1 id="msgs">PS4 9.00 FW Host v1.1 by GamerHack</h1>
 <hr>
@@ -85,10 +85,20 @@ function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cac
 <button class="btn" onclick=load_rifRen()> RIF Renamer </button>
 <button class="btn" onclick=load_permUart()> Permanent UART </button>
 <br>
-<button class="btn" onclick=load_fanthreshold()> Fan Threshold 60 &#176;C </button>
+<button class="btn" onclick=load_fanthreshold() style="margin-left: 75px;"> Fan Threshold </button><font color="white"><select id="tempC"></select>&#176;C
 <br>
 <hr style="margin-top: 86px;">
 <h1 style="margin-top: 15px; color: yellow;">Special Thanks to:<a href="https://twitter.com/sleirsgoevy" style="color:#f31414; margin-left: 15px;">@sleirsgoevy</a><a style="color:white; margin-left: 15px;">ChendoChap</a><a href="https://twitter.com/SpecterDev" style="color:#f31414; margin-left: 15px;">@SpecterDev</a><a style="color:white; margin-left: 15px;">SiSTR0</a><a href="https://twitter.com/Znullptr" style="color:#f31414; margin-left: 15px;">@Znullptr</a><a style="color:white; margin-left: 15px;">And Many More Developers ...</a></h1>
+<script>
+for(var i=40; i<=79; i++){
+    var select = document.getElementById("tempC");
+    var option = document.createElement("OPTION");
+	select.options.add(option);
+	option.text = i;
+	option.value = i;
+}
+tempC.value=60;
+</script>
 <script>
 function allset() {
 setTimeout(function(){document.location.href = 'index.html';},3000);
@@ -215,7 +225,7 @@ setTimeout(poc,1500);
 }
 
 function load_fanthreshold(){
-var script = document.createElement('script');script.src = "fan-threshold.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "fan-threshold.js";localStorage.setItem('fanthreshold', tempC.value);document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + Fan Threshold... Please Wait !!!"
 LoadedMSG="Fan Threshold Loaded... Press OK Now !!!";
 setTimeout(poc,1500);
