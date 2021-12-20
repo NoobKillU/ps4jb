@@ -62,7 +62,9 @@ function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cac
 <hr>
 <br>
 <h1 style="font-size:20px;color:yellow;">Main Payloads</h1>
-<button class="btn" onclick=load_goldhen2()> GoldHEN 2.0b </button>
+<button class="btn" onclick=load_goldhen2b()> GoldHEN 2.0b </button>
+<button class="btn" onclick=load_goldhen2b2()> GoldHEN 2.0b2 </button>
+<button class="btn" onclick=load_binloader()> Bin Loader </button>
 <br>
 <h1 style="font-size:20px;text-align:center;">Payloads</h1>
 <button class="btn" onclick=load_todex()> ToDex </button>
@@ -104,15 +106,36 @@ tempC.value=60;
 </script>
 <script>
 function allset(){
-setTimeout(function(){windows.location.reload();},1000);
+setTimeout(location.reload,1000);
 alert("Payload Loaded... You will get a Memory Error, Press OK after that");
-window.msgs.innerHTML= LoadedMSG;
+msgs.innerHTML= LoadedMSG;
 }
 
-function load_goldhen2(){
-var script = document.createElement('script');script.src = "goldhen.js";document.getElementsByTagName('head')[0].appendChild(script);
+function awaitpl(){
+setTimeout(location.reload,1000);
+alert("Jailbreak Loaded... Now Send a Payload using PS4 IP and port 9020");
+msgs.innerHTML="Wait a Moment...";
+}
+
+function load_goldhen2b(){
+var script = document.createElement('script');script.src = "goldhen_2.0b.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + GoldHEN v2.0b... Please Wait !!!";
 LoadedMSG="GoldHEN v2.0b Loaded...";
+run_jb = "payload";
+setTimeout(poc,1500);
+}
+
+function load_goldhen2b2(){
+var script = document.createElement('script');script.src = "goldhen_2.0b2.js";document.getElementsByTagName('head')[0].appendChild(script);
+msgs.innerHTML="Loading Jailbreak + GoldHEN v2.0b2... Please Wait !!!";
+LoadedMSG="GoldHEN v2.0b2 Loaded...";
+run_jb = "payload";
+setTimeout(poc,1500);
+}
+
+function load_binloader(){
+msgs.innerHTML="Loading Jailbreak + Bin Loader... Please Wait !!!";
+run_jb = "binloader";
 setTimeout(poc,1500);
 }
 
@@ -120,6 +143,7 @@ function load_todex(){
 var script = document.createElement('script');script.src = "todex.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + ToDex... Please Wait !!!"
 LoadedMSG="ToDex Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -127,6 +151,7 @@ function load_dumper(){
 var script = document.createElement('script');script.src = "dumper.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + Dumper... Please Wait !!!"
 LoadedMSG="Dumper Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -134,6 +159,7 @@ function load_ftp(){
 var script = document.createElement('script');script.src = "ftp.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + FTP... Please Wait !!!"
 LoadedMSG="FTP Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -141,6 +167,7 @@ function load_app2usb(){
 var script = document.createElement('script');script.src = "app2usb.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + App2USB... Please Wait !!!"
 LoadedMSG="App2USB Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -148,6 +175,7 @@ function load_dbackup(){
 var script = document.createElement('script');script.src = "backup.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + DB Backup... Please Wait !!!"
 LoadedMSG="DB Backup Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -155,6 +183,7 @@ function load_dbrestore(){
 var script = document.createElement('script');script.src = "restore.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + DB Restore... Please Wait !!!"
 LoadedMSG="DB Restore Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -162,6 +191,7 @@ function load_enablebUpdates(){
 var script = document.createElement('script');script.src = "enable-updates.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + Enable Updates... Please Wait !!!"
 LoadedMSG="Enable Updates Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -169,6 +199,7 @@ function load_disableUpdates(){
 var script = document.createElement('script');script.src = "disable-updates.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + Disable Updates... Please Wait !!!"
 LoadedMSG="Disable Updates Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -176,6 +207,7 @@ function load_historyBlocker(){
 var script = document.createElement('script');script.src = "history-blocker.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + History Blocker... Please Wait !!!"
 LoadedMSG="History Blocker Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -183,6 +215,7 @@ function load_kernelDump(){
 var script = document.createElement('script');script.src = "kernel-dumper.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + Kernel Dumper... Please Wait !!!"
 LoadedMSG="Kernel Dumper Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -190,6 +223,7 @@ function load_kernelClock(){
 var script = document.createElement('script');script.src = "kernel-clock.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + Kernel Clock... Please Wait !!!"
 LoadedMSG="Kernel Clock Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -197,6 +231,7 @@ function load_moduleDump(){
 var script = document.createElement('script');script.src = "module-dumper.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + Module Dumper... Please Wait !!!"
 LoadedMSG="Module Dumper Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -204,6 +239,7 @@ function load_disbAslr(){
 var script = document.createElement('script');script.src = "disable-aslr.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + Disable ASLR... Please Wait !!!"
 LoadedMSG="Disable ASLR Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -211,6 +247,7 @@ function load_exitidu(){
 var script = document.createElement('script');script.src = "exit-idu.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + Exit IDU... Please Wait !!!"
 LoadedMSG="Exit IDU Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -218,6 +255,7 @@ function load_rifRen(){
 var script = document.createElement('script');script.src = "rif-renamer.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + RIF Renamer... Please Wait !!!"
 LoadedMSG="RIF Renamer Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -225,6 +263,7 @@ function load_permUart(){
 var script = document.createElement('script');script.src = "permanent-uart.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + Permanent UART... Please Wait !!!"
 LoadedMSG="Permanent UART Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -232,6 +271,7 @@ function load_webrte(){
 var script = document.createElement('script');script.src = "webrte900.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + WebRTE... Please Wait !!!"
 LoadedMSG="WebRTE Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -239,6 +279,7 @@ function load_ps4debug(){
 var script = document.createElement('script');script.src = "ps4debug.js";document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + PS4 Debug... Please Wait !!!"
 LoadedMSG="PS4 Debug Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 
@@ -246,6 +287,7 @@ function load_fanthreshold(){
 var script = document.createElement('script');script.src = "fan-threshold.js";localStorage.setItem('fanthreshold', tempC.value);document.getElementsByTagName('head')[0].appendChild(script);
 msgs.innerHTML="Loading Jailbreak + Fan Threshold... Please Wait !!!"
 LoadedMSG="Fan Threshold Loaded...";
+run_jb = "payload";
 setTimeout(poc,1500);
 }
 </script>
